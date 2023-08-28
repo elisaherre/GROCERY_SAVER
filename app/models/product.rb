@@ -10,6 +10,8 @@ class Product < ApplicationRecord
   CATEGORIES = %w[frescos procesados granos\ y \cereales bebidas congelados panadería\ y \repostería dietéticos\ y \suplementos orgánicos vegetarianos\ y \veganos]
   validates :category, inclusion: { in: CATEGORIES }
 
+  has_one_attached :photo
+
   # def validate_date
   #   if expiration_date < Date.today
   #     "La fecha no puede ser menor a la actual"
