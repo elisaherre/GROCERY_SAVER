@@ -8,5 +8,9 @@
 <p>Expiration date: <strong><%=@product.expiration_date %></strong></p>
 <p>Stock: <%=@product.stock %></p>
 <p>Price: <%=@product.price %></p>
+<% if @product.user == current_user %>
+<h4><%= link_to "Editar", edit_product_path(@product.id), class: "btn btn-primary" %></h4>
+<%= link_to "X", product_path(@product.id), data: {turbo_method: :delete, turbo_confirm: "¿Seguro que quieres borrar este producto?"} %>
+<% end %>
 <%= link_to "Volver", products_path %>
 </div>
