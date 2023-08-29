@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Mis ventas</h1>
+  <div class="d-flex flex-wrap justify-content-center gap-3">
+    <% @transactions.each do |transaction| %>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= transaction.product.name %></h5>
+        <p class="card-text">Precio: $<%= transaction.product.price %></p>
+        <p class="card-text">Fecha:<%= transaction.crated_at %></p>
+        <h4><%= link_to "Ver transaction", product_path(product.id), class: "btn btn-primary" %></h4>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

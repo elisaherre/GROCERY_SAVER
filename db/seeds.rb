@@ -114,6 +114,9 @@ product14 = Product.new(name: "Té negro", price: "10", expiration_date: "2023/0
 product14.photo.attach(io: file, filename: "ténegro.png", content_type: "image/png")
 product14.save!
 
-transaction1 = Transaction.create!(product: product11, user: user3, price: product11.price)
-transaction2 = Transaction.create!(product: product9, user: user1, price: product9.price)
-transaction3 = Transaction.create!(product: product2, user: user2, price: product2.price)
+transaction1 = Transaction.create!(product: product11, user: user3, price: product11.price, mode: "buy")
+transaction2 = Transaction.create!(product: product9, user: user1, price: product9.price, mode: "sell")
+transaction3 = Transaction.create!(product: product2, user: user2, price: product2.price, mode: "buy")
+transaction4 = Transaction.create!(product: product7, user: user2, price: product7.price, mode: "buy")
+transaction5 = Transaction.create!(product: product3, user: user1, price: product3.price, mode: "sell")
+transaction6 = Transaction.create!(product: product6, user: user3, price: product6.price, mode: "buy")
