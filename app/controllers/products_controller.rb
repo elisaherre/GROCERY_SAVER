@@ -25,10 +25,9 @@ class ProductsController < ApplicationController
     @products = Product.where(user: current_user)
   end
 
-  # def category
-  #   @category = [params[products][category]]
-  #   @products = Product.where(category: )
-  # end
+  def category
+    @products = Product.where(category: params[:category])
+  end
 
   def edit
   end
