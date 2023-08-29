@@ -1,0 +1,9 @@
+<%= simple_form_for @product do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :stock %>
+  <%= f.input :expiration_date %>
+  <%= f.input :category, collection: Product::CATEGORIES %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>
