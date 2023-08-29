@@ -1,0 +1,24 @@
+<div class="container">
+  <% if @products.size > 0 %>
+    <h1><%= @products.first.category.capitalize %></h1>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <% @products.each do |product| %>
+      <div class="card" style="width: 18rem;">
+        <% if product.photo.key != nil %>
+        <%= cl_image_tag(product.photo.key,
+            height: 300, crop: :fill) %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <p class="card-text">Fecha de vencimiento: <br> <%= product.expiration_date %></p>
+          <p class="card-text">Precio: $<%= product.price %></p>
+          <p class="card-text">Stock: <%= product.stock %></p>
+          <h4><%= link_to "Ver producto", product_path(product.id), class: "btn btn-primary" %></h4>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>No hay productos de esta categoría</p>
+  <% end %>
+</div>
