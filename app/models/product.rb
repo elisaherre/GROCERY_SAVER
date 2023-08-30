@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   validates :name, length: { minimum: 3 }
   validates :expiration_date, comparison: { greater_than_or_equal_to: Date.today }
   # validate :validate_date
-  validates :stock, :price, numericality: { greater_than: 0 }
+  validates :price, numericality: { greater_than: 0 }
   CATEGORIES = %w[frescos procesados granos\ y\ cereales bebidas congelados panadería\ y\ repostería dietéticos\ y\ suplementos orgánicos vegetarianos\ y\ veganos]
   validates :category, inclusion: { in: CATEGORIES }
 

@@ -3,6 +3,7 @@
     <h1><%= @products.first.category.capitalize %></h1>
     <div class="d-flex flex-wrap justify-content-center gap-3">
       <% @products.each do |product| %>
+      <% if product.stock > 0 %>
       <div class="card" style="width: 18rem;">
         <% if product.photo.key != nil %>
         <%= cl_image_tag(product.photo.key,
@@ -13,9 +14,13 @@
           <p class="card-text">Fecha de vencimiento: <br> <%= product.expiration_date %></p>
           <p class="card-text">Precio: $<%= product.price %></p>
           <p class="card-text">Stock: <%= product.stock %></p>
-          <h4><%= link_to "Ver producto", product_path(product.id), class: "btn btn-primary" %></h4>
+          <div class="d-flex justify-content-between">
+             <h4><%= link_to "Ver producto", product_path(product.id), class: "btn btn-primary" %></h4>
+          <h4><%= button_to "Comprar", transactions_path(product_id: product.id), class: "btn btn-primary" %></h4>
+          </div>
         </div>
       </div>
+      <% end %>
       <% end %>
     </div>
   <% else %>

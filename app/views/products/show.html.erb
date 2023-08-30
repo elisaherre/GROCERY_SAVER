@@ -12,5 +12,8 @@
 <h4><%= link_to "Editar", edit_product_path(@product.id), class: "btn btn-primary" %></h4>
 <%= link_to "X", product_path(@product.id), data: {turbo_method: :delete, turbo_confirm: "¿Seguro que quieres borrar este producto?"} %>
 <% end %>
+<% if current_user != @product.user %>
+  <%= link_to "Comprar", products_path %>
+<% end %>
 <%= link_to "Volver", products_path %>
 </div>
