@@ -1,6 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +13,21 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 80px;
+}
+
+.change_white{
+  color: #fff;
+}
+
+.nav-link-login {
+  background-color: #88A62B; /* Verde corporativo */
+  padding: 10px 25px;
+  border-radius: 15px;
+  color: #fff !important;
+  margin-right: 8px;
+}
+
+.navbar-nav > li {
+  margin-right: 15px;
 }
