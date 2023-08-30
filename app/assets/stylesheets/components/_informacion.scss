@@ -1,0 +1,103 @@
+
+// Specific CSS for your home-page
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.card-section {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.card-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  }
+
+.card-section-title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 32px;
+  font-family: roboto;
+  font-weight: 800;
+}
+
+.green-text {
+  color: #88A62B;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 30%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-family: roboto;
+  text-align: center;
+}
+
+.card-description {
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card-button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-button:hover {
+  background-color: #0056b3;
+}
+
+.btn_info{
+  background-color: #88A62B; /* Verde corporativo */
+  padding: 10px 25px;
+  border-radius: 15px;
+  color: #fff !important;
+  text-decoration: none;
+  margin-right: 8px;
+  width: 60%;
+  text-align: center;
+}
+
+.btn_info:hover {
+  background-color: #cdd006;
+  color: #fff;
+  text-decoration: none;
+}

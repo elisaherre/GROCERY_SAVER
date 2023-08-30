@@ -1,3 +1,182 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= console %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner_home.jpg' %>);">
+  <div class="container">
+    <h1><strong>SABOR DE CALIDAD</strong></h1>
+    <h1><strong>HASTA EL ULTIMO</strong></h1>
+    <h1><strong>SEGUNDO</strong></h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Conocer más</a>
+  </div>
+</div>
+
+
+  <!--Seccion de información-->
+<div class="bg-white">
+ <div class="container w-75 mb-5">
+        <div class="row justify-content-center">
+                <div class="card-section-title text-center"><span class="green-text">2000 +</span> DESPERDICIOS MENOS EN EL MES</div>
+
+            <!-- Card 1 -->
+            <div class="col-4 card">
+                <div class="card-title"><strong>Sostenibilidad</strong></div>
+                <div class="card-description">Creemos en un mundo donde el desperdicio es cero.
+                Al consumir alimentos cercanos a su fecha de vencimiento, estamos dando un
+                paso adelante hacia un planeta más sostenible y responsable.</div>
+                <a class="btn_info btn-flat align-self-center" href="#">Conocer más</a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-4 card">
+                <div class="card-title"><strong>Economía Conciente</strong></div>
+                <div class="card-description">Ahorra mientras haces una elección
+                inteligente. Nuestros productos, a punto de expirar, ofrecen
+                calidad a precios reducidos, beneficiando tanto a tu bolsillo
+                como al medio ambiente.</div>
+                <a class="btn_info btn-flat align-self-center" href="#">Conocer más</a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-4 card">
+                <div class="card-title"><strong>Responsabilidad</strong></div>
+                <div class="card-description">El sabor no tiene fecha de vencimiento.
+                Ofrecemos productos que, aunque cercanos a expirar, mantienen toda su
+                frescura y sabor, asegurando una experiencia gastronómica deliciosa y
+                ética.</div>
+                <a class="btn_info btn-flat align-self-center" href="#">Conocer más</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!--Carrusel-->
+
+<div class="carrusel m-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'fondo_carrusel.jpg' %>);">
+
+<div class="container-fluid d-flex justify-content-center">
+  <div style="width: 80%;">
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-apple-alt mb-2"></i>
+                  <h3><strong>FRESCOS</strong></h3>
+                </div>
+              </div>
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-bacon mb-2"></i>
+                  <h3><strong>PROCESADOS</strong></h3>
+                </div>
+              </div>
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-seedling"></i>
+                  <h3><strong>GRANOS Y CEREALES</strong></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-glass-martini mb-2"></i>
+                  <h3><strong>BEBIDAS</strong></h3>
+                </div>
+              </div>
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-fish mb-2"></i>
+                  <h3><strong>CONGELADOS</strong></h3>
+                </div>
+              </div>
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-bread-slice mb-2"></i>
+                  <h3><strong>PANADERIA Y REPOSTERIA</strong></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-capsules mb-2"></i>
+                  <h3><strong>DIETETICOS Y SUPLEMENTOS</strong></h3>
+                </div>
+              </div>
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-scooter mb-2"></i>
+                  <h3><strong>ORGANICOS</strong></h3>
+                </div>
+              </div>
+              <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                  <i class="fas fa-walking mb-2"></i>
+                  <h3><strong>VEGETARIANOS Y VEGANOS</strong></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<!--Card con informacion-->
+<div class="container_products mt-2">
+    <div class="row">
+      <div class="card-informacion-title text-center">PRODUCTOS DESTACADOS</div>
+        <!-- Product Card 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150" class="product-img-top" alt="Imagen del producto">
+                <div class="product-card-body">
+                    <h5 class="product-card-title">Nombre del Producto 1</h5>
+                    <p class="product-card-text">Precio: $100.00</p>
+                    <p class="product-card-text">Fecha de Caducidad: 01/01/2024</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150" class="product-img-top" alt="Imagen del producto">
+                <div class="product-card-body">
+                    <h5 class="product-card-title">Nombre del Producto 2</h5>
+                    <p class="product-card-text">Precio: $150.00</p>
+                    <p class="product-card-text expiration-date" data-controller="counter" data-expiration-value="2023-09-01">Días para vencer: <span></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/150" class="product-img-top" alt="Imagen del producto">
+                <div class="product-card-body">
+                    <h5 class="product-card-title">Nombre del Producto 3</h5>
+                    <p class="product-card-text">Precio: $200.00</p>
+                    <p class="product-card-text">Fecha de Caducidad: 01/12/2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
