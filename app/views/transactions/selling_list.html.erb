@@ -1,15 +1,18 @@
 <div class="container">
   <h1>Mis ventas</h1>
-  <div class="d-flex flex-wrap justify-content-center gap-3">
-    <% @transactions.each do |transaction| %>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= transaction.product.name %></h5>
-        <p class="card-text">Precio: $<%= transaction.product.price %></p>
-        <p class="card-text">Fecha:<%= transaction.crated_at %></p>
-        <h4><%= link_to "Ver transaction", product_path(product.id), class: "btn btn-primary" %></h4>
+
+    <% @ventas.each do |venta| %>
+      <div class="card w-100">
+        <div class="card-header">
+          Fecha: <%= venta.created_at %>
+        </div>
+        <div class="card-body d-flex justify-content-between">
+        <div class='d-flex'>
+          <h5 class="card-title me-3"><%= venta.product.name %></h5>
+          <p class="card-text">Precio: $<%= venta.product.price %></p>
+        </div>
+          <%= link_to "Ver venta", transaction_path(venta.id), class: "btn btn-primary" %>
+        </div>
       </div>
-    </div>
     <% end %>
-  </div>
 </div>

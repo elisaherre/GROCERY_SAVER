@@ -1,0 +1,23 @@
+<div class="container w-50 d-flex mt-3 justify-content-center border align-items-center p-3">
+
+  <% if @transaction.product.photo.key != nil %>
+    <%= cl_image_tag(@transaction.product.photo.key,
+      height: 200, crop: :fill) %>
+  <% end %>
+  <div class="ms-3">
+    <h1><%= @transaction.product.name %></h1>
+    <p><%= @transaction.created_at %></p>
+    <% if @transaction.user != current_user %>
+    <p>Comprador: <%=@transaction.user.email %></p>
+    <% else %>
+    <p>Vendedor: <%=@transaction.product.user.email %></p>
+    <% end %>
+    <p>Precio: $<%=@transaction.product.price %></p>
+    <% if @transaction.user != current_user %>
+      <%= link_to "Volver", selling_list_path, class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "Volver", shopping_list_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+</div>
