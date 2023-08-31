@@ -10,29 +10,54 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link change_white" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Productos", "#", class: "nav-link change_white" %>
+            <%= link_to "Productos", products_path , class: "nav-link change_white" %>
           </li>
+          <li class="nav-item dropdown">
+          <a href="#" class="nav-link change_white" id="categoryDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categorias
+          </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Frescos", category_path("frescos"), class: "dropdown-item" %>
+              <%= link_to "Procesados", category_path("procesados"), class: "dropdown-item" %>
+              <%= link_to "Granos y Cereales", category_path("granos y cereales"), class: "dropdown-item" %>
+              <%= link_to "Bebidas", category_path("bebidas"), class: "dropdown-item" %>
+              <%= link_to "Congelados", category_path("congelados") , class: "dropdown-item" %>
+              <%= link_to "Panaderia y Reposteria", category_path("panadería y repostería"), class: "dropdown-item" %>
+              <%= link_to "Dieteticos y Suplementos", category_path("dieteticos y suplementos") , class: "dropdown-item" %>
+              <%= link_to "Organicos", category_path("orgánicos"), class: "dropdown-item" %>
+              <%= link_to "Vegetarianos y Veganos", category_path("vegetarianos y veganos"), class: "dropdown-item" %>
+            </div>
+          </li>
+          <% if user_signed_in? == false %>
           <li class="nav-item">
-            <%= link_to "Login", "#", class: "nav-link nav-link-login" %>
+              <%= link_to "Login", new_user_session_path, class: "nav-link nav-link-login" %>
+          <% else %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+             <% if current_user.photo %>
+             <%= cl_image_tag(current_user.photo.key, :transformation=>[
+                {:gravity=>"face", :height=>400, :width=>400, :crop=>"crop"},
+                {:radius=>"max"},
+                {:width=>40, :crop=>"scale"},
+                {:fetch_format=>:auto}
+                ])  %>
+             <% else %>
+            <%= image_tag "avatar.svg", class: "avatar", alt: "dropdown menu" %>
+            <% end %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Mis compras", shopping_list_path , class: "dropdown-item" %>
+              <%= link_to "Mis ventas", selling_list_path , class: "dropdown-item" %>
+              <%= link_to "Mis Productos", my_products_path , class: "dropdown-item" %>
+              <%= link_to "Agregar productos", new_product_path , class: "dropdown-item" %>
+
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link nav-link-login" %>
           </li>
         <% end %>
       </ul>

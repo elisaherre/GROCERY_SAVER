@@ -59,43 +59,45 @@
           <div class="carousel-item active">
             <div class="row">
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-apple-alt mb-2"></i>
-                  <h3><strong>FRESCOS</strong></h3>
+                    <%= link_to "FRESCOS", category_path("frescos"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-bacon mb-2"></i>
-                  <h3><strong>PROCESADOS</strong></h3>
+                    <%= link_to "PRECESADOS", category_path("procesados"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-seedling"></i>
-                  <h3><strong>GRANOS Y CEREALES</strong></h3>
+                    <%= link_to "GRANOS Y CEREALES", category_path("granos y cereales"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
             </div>
           </div>
+
+
           <div class="carousel-item">
             <div class="row">
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-glass-martini mb-2"></i>
-                  <h3><strong>BEBIDAS</strong></h3>
+                    <%= link_to "BEBIDAS", category_path("bebidas"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-fish mb-2"></i>
-                  <h3><strong>CONGELADOS</strong></h3>
+                    <%= link_to "CONGELADOS", category_path("congelados"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-bread-slice mb-2"></i>
-                  <h3><strong>PANADERIA Y REPOSTERIA</strong></h3>
+                    <%= link_to "PANADERÍA Y REPOSTERÍA", category_path("panadería y repostería"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
             </div>
@@ -103,21 +105,21 @@
           <div class="carousel-item">
             <div class="row">
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-capsules mb-2"></i>
-                  <h3><strong>DIETETICOS Y SUPLEMENTOS</strong></h3>
+                    <%= link_to "DIETÉTICOS Y SUPLEMENTOS", category_path("dietéticos y suplementos"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-scooter mb-2"></i>
-                  <h3><strong>ORGANICOS</strong></h3>
+                    <%= link_to "ORGANICOS", category_path("orgánicos"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
               <div class="col-md-4 custom-card d-flex align-items-center justify-content-center">
-                <div class="text-center">
+                <div class="text-center d-flex flex-column">
                   <i class="fas fa-walking mb-2"></i>
-                  <h3><strong>VEGETARIANOS Y VEGANOS</strong></h3>
+                    <%= link_to "VEGETARIANOS Y VEGANOS", category_path("vegetarianos y veganos"), class: "text-decoration-none text-dark fw-bold" %>
                 </div>
               </div>
             </div>
@@ -141,42 +143,26 @@
 
 <!--Card con informacion-->
 <div class="container_products mt-2">
-    <div class="row">
+    <div class="row d-flex justify-content-center">
       <div class="card-informacion-title text-center">PRODUCTOS DESTACADOS</div>
-        <!-- Product Card 1 -->
-        <div class="col-md-4 mb-4">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" class="product-img-top" alt="Imagen del producto">
-                <div class="product-card-body">
-                    <h5 class="product-card-title">Nombre del Producto 1</h5>
-                    <p class="product-card-text">Precio: $100.00</p>
-                    <p class="product-card-text">Fecha de Caducidad: 01/01/2024</p>
+      <% @products.each do |product| %>
+                <!-- Product Card 1 -->
+            <div class="card" style="width: 25rem">
+              <% if product.photo.key != nil %>
+                    <%= cl_image_tag(product.photo.key,
+                        height: 300, crop: :fill) %>
+                    <% end %>
+                    <div class="card-body">
+                    <h5 class="card-title"><%= product.name %></h5>
+                    <p class="card-text">$<%= product.price %></p>
+                    <p class="card-text"><%= product.expiration_date %></p>
+                    <p class="card-text"><%= product.stock %></p>
+                    <div class = "d-flex justify-content-between">
+                      <%=link_to "Ver más",  product_path(product.id), class:"btn btn-flat" %>
+                      <%=button_to "Comprar",  transactions_path(product_id: product.id), class:"btn btn-flat" %>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Product Card 2 -->
-        <div class="col-md-4 mb-4">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" class="product-img-top" alt="Imagen del producto">
-                <div class="product-card-body">
-                    <h5 class="product-card-title">Nombre del Producto 2</h5>
-                    <p class="product-card-text">Precio: $150.00</p>
-                    <p class="product-card-text expiration-date" data-controller="counter" data-expiration-value="2023-09-01">Días para vencer: <span></span></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Card 3 -->
-        <div class="col-md-4 mb-4">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/150" class="product-img-top" alt="Imagen del producto">
-                <div class="product-card-body">
-                    <h5 class="product-card-title">Nombre del Producto 3</h5>
-                    <p class="product-card-text">Precio: $200.00</p>
-                    <p class="product-card-text">Fecha de Caducidad: 01/12/2024</p>
-                </div>
-            </div>
-        </div>
+      <%end%>
     </div>
 </div>
