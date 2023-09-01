@@ -5,13 +5,13 @@
   <div class="d-flex flex-row mb-3 justify-content-center">
     <div class="card mb-3" style="width: 50rem;">
       <div class="row g-0">
-        <div class="col-md-4">
+        <div class="col-md-4 bg-white align-items-center d-flex">
           <% if @product.photo.key != nil %>
           <%= cl_image_tag(@product.photo.key, crop: :fill,
           class: "img-fluid rounded-start") %>
           <% end %>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 ps-3">
           <div class="card-body">
             <h5 class="card-title"><%= @product.name %></h5>
             <ul class="list-group list-group-flush">
@@ -22,17 +22,17 @@
               <li class="list-group-item">Vendedor: <%=@product.user.email %></li>
             </ul>
           </div>
+          <div class="d-flex justify-content-start ms-3 mb-3 ps-3">
+            <% if @product.user == current_user %>
+            <%= link_to "Editar", edit_product_path(@product.id), class: "btn btn-primary" %>
+            <% end %>
+            <% if current_user != @product.user %>
+            <%= button_to "Comprar", transactions_path(product_id: @product.id), class: "btn btn-primary" %>
+            <% end %>
+            <%= link_to "Volver", products_path, class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
-    <div class="card-body">
-      <% if @product.user == current_user %>
-      <%= link_to "Editar", edit_product_path(@product.id), class: "btn btn-primary" %>
-      <% end %>
-      <% if current_user != @product.user %>
-      <%= button_to "Comprar", transactions_path(product_id: @product.id), class: "btn btn-primary" %>
-      <% end %>
-      <%= link_to "Volver", products_path, class: "btn btn-primary" %>
-    </div>
     </div>
   </div>
 </div>

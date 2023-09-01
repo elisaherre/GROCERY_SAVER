@@ -7,7 +7,7 @@
     <% if @products.size > 0 %>
       <% @products.each do |product| %>
       <% if product.stock > 0 %>
-        <div class="card mb-3 p-1" style="width: 18rem; height: 30rem">
+        <div class="card bg-white m-3 p-1" style="width: 18rem; height: 30rem">
           <% if product.photo.key != nil %>
             <%= cl_image_tag(product.photo.key, height: 200, width: 200, crop: :pad, class: "mx-auto") %>
             <% end %>
