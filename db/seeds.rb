@@ -114,6 +114,168 @@ product15 = Product.new(name: "Té negro", price: "10", expiration_date: "2023/0
 product15.photo.attach(io: file, filename: "ténegro.png", content_type: "image/png")
 product15.save!
 
+puts "creando producto 16..."
+file = URI.open("https://rogusa.es/wp-content/uploads/2020/12/Lentejas_425-800x800-1.png")
+product16 = Product.new(name: "Lentejas", price: "7.50", expiration_date: "2023/09/13", stock: 3, category: "orgánicos", user: user1)
+product16.photo.attach(io: file, filename: "lentejas.png", content_type: "image/png")
+product16.save!
+
+puts "creando producto 17..."
+file = URI.open("https://www.facundo.com.ec/wp-content/uploads/2020/11/vc-maiz-dulce.png")
+product17 = Product.new(name: "Choclo", price: "9.1", expiration_date: "2023/09/30", stock: 8, category: "orgánicos", user: user2)
+product17.photo.attach(io: file, filename: "choclo.png", content_type: "image/png")
+product17.save!
+
+puts "creando producto 18..."
+file = URI.open("https://quaker.lat/app/uploads/sites/2/2019/06/750047801929_720x840.png")
+product18 = Product.new(name: "Avena", price: "10", expiration_date: "2023/09/12", stock: 4, category: "granos y cereales", user: user3)
+product18.photo.attach(io: file, filename: "avena.png", content_type: "image/png")
+product18.save!
+
+puts "creando producto 19..."
+file = URI.open("https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/paty-clasico-x4byb1-57cac8cd6117b410cb15888174052438-1024-1024.png")
+product15 = Product.new(name: "Hamburguesas", price: "2.70", expiration_date: "2023/09/24", stock: 29, category: "congelados", user: user1)
+product15.photo.attach(io: file, filename: "hamburguesas.png", content_type: "image/png")
+product15.save!
+
+puts "creando producto 20..."
+file = URI.open("https://ss-static-01.esmsv.com/id/144746/productos/obtenerimagen/?id=2816&useDensity=false&width=1280&height=720&tipoEscala=contain")
+product15 = Product.new(name: "Merengadas", price: "7.20", expiration_date: "2023/10/3", stock: 21, category: "panadería y repostería", user: user2)
+product15.photo.attach(io: file, filename: "merengadas.png", content_type: "image/png")
+product15.save!
+
+puts "creando producto 21..."
+file = URI.open("https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/matarazzo-spaghetti1-df505594149de0eb3d15946808095300-1024-1024.png")
+product21 = Product.new(name: "Spaghetti", price: "10", expiration_date: "2023/09/3", stock: 8, category: "procesados", user: user3)
+product21.photo.attach(io: file, filename: "spaghetti.png", content_type: "image/png")
+product21.save!
+
+puts "creando producto 22..."
+file = URI.open("https://ptlone.com/product/image/large/sn647_0.png")
+product22 = Product.new(name: "Doritos", price: "12.50", expiration_date: "2023/09/13", stock: 3, category: "procesados", user: user1)
+product22.photo.attach(io: file, filename: "doritos.png", content_type: "image/png")
+product22.save!
+
+puts "creando producto 23..."
+file = URI.open("https://bogota.farmu.com.co/cdn/shop/products/STEVIA-Caja-x-50g.png?v=1664204104")
+product23 = Product.new(name: "Stevia", price: "9.1", expiration_date: "2023/09/30", stock: 8, category: "dietéticos y suplementos", user: user2)
+product23.photo.attach(io: file, filename: "stevia.png", content_type: "image/png")
+product23.save!
+
+puts "creando producto 24..."
+file = URI.open("https://benoti.pe/wp-content/uploads/2021/02/harinaindustrialintegral-1.png")
+product24 = Product.new(name: "Harina integral", price: "10", expiration_date: "2023/09/12", stock: 4, category: "dietéticos y suplementos", user: user3)
+product24.photo.attach(io: file, filename: "harinaintegral.png", content_type: "image/png")
+product24.save!
+
+puts "creando producto 25..."
+file = URI.open("https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/casamcream-light-x300byb1-f90425adb323fab39215959377856790-1024-1024.png")
+product25 = Product.new(name: "Queso crema light", price: "2.70", expiration_date: "2023/09/24", stock: 21, category: "dietéticos y suplementos", user: user1)
+product25.photo.attach(io: file, filename: "casancrem.png", content_type: "image/png")
+product25.save!
+
+puts "creando producto 26..."
+file = URI.open("https://www.negroni.com/sites/negroni.com/files/styles/scale__1440_x_1440_/public/recipes/2019/05/g3364_salame_milano_stella_100g_2019_0.png?itok=uLlZltJT")
+product26 = Product.new(name: "Salame", price: "7.2", expiration_date: "2023/10/3", stock: 21, category: "procesados", user: user2)
+product26.photo.attach(io: file, filename: "salame.png", content_type: "image/png")
+product26.save!
+
+puts "creando producto 27..."
+file = URI.open("https://theargentino.com/cdn/shop/products/serenisima_1024x.png?v=1657652358")
+product27 = Product.new(name: "Dulce de leche", price: "10", expiration_date: "2023/09/3", stock: 8, category: "panadería y repostería", user: user3)
+product27.photo.attach(io: file, filename: "dulcedeleche.png", content_type: "image/png")
+product27.save!
+
+puts "creando producto 28..."
+file = URI.open("https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/la-perla-piononobyb1-c62ef2c17316f6582815900119149262-1024-1024.png")
+product28 = Product.new(name: "Pionono", price: "12.50", expiration_date: "2023/09/13", stock: 3, category: "panadería y repostería", user: user1)
+product28.photo.attach(io: file, filename: "pionono.png", content_type: "image/png")
+product28.save!
+
+puts "creando producto 29..."
+file = URI.open("https://www.aki.com.ec/wp-content/uploads/2023/05/7861042534242.png")
+product29 = Product.new(name: "Chocolate repostero", price: "9.1", expiration_date: "2023/09/30", stock: 8, category: "panadería y repostería", user: user2)
+product29.photo.attach(io: file, filename: "chocolaterepostero.png", content_type: "image/png")
+product29.save!
+
+puts "creando producto 30..."
+file = URI.open("https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/vegetalex-milanesa-soja1-be0500ccfe134ef63715973560977895-1024-1024.png")
+product30 = Product.new(name: "Milanesas de soja", price: "10", expiration_date: "2023/09/12", stock: 4, category: "congelados", user: user3)
+product30.photo.attach(io: file, filename: "milanesassoja.png", content_type: "image/png")
+product30.save!
+
+puts "creando producto 31..."
+file = URI.open("https://d2r9epyceweg5n.cloudfront.net/stores/001/108/127/products/patitas-de-pollo-granja-de-sol-400gbyb1-ab8d082d191f4b493a15888172762629-1024-1024.png")
+product31 = Product.new(name: "Patitas", price: "2.70", expiration_date: "2023/09/24", stock: 21, category: "congelados", user: user1)
+product31.photo.attach(io: file, filename: "patitas.png", content_type: "image/png")
+product31.save!
+
+puts "creando producto 32..."
+file = URI.open("https://freschezzafoods.com/wp-content/uploads/2021/04/papas-cruj.png")
+product32 = Product.new(name: "Papas fritas", price: "13.2", expiration_date: "2023/10/3", stock: 32, category: "congelados", user: user2)
+product32.photo.attach(io: file, filename: "papasfritas.png", content_type: "image/png")
+product32.save!
+
+puts "creando producto 33..."
+file = URI.open("https://vinotecamasis.com.ar/wp-content/uploads/2021/02/Agua-Villavicencio-Sin-Gas-1500-ml-ML.png")
+product33 = Product.new(name: "Agua", price: "1.45", expiration_date: "2023/09/24", stock: 38, category: "bebidas", user: user1)
+product33.photo.attach(io: file, filename: "agua.png", content_type: "image/png")
+product33.save!
+
+puts "creando producto 34..."
+file = URI.open("https://cdn11.bigcommerce.com/s-4nzgid62dq/images/stencil/1280x1280/products/174/36/absolut-vodka-PI-B__66411.1631160961.png?c=2")
+product34 = Product.new(name: "Vodka", price: "7.2", expiration_date: "2023/10/3", stock: 9, category: "bebidas", user: user2)
+product34.photo.attach(io: file, filename: "vodka.png", content_type: "image/png")
+product34.save!
+
+puts "creando producto 35..."
+file = URI.open("https://res.cloudinary.com/oita/image/upload/v1688057534/Merco/Parte%205/7501008042946_CEREAL_ZUCARITAS_300_GR_KELLOGGS_fvwv0r.png")
+product35 = Product.new(name: "Zucaritas", price: "8", expiration_date: "2023/09/3", stock: 6, category: "granos y cereales", user: user3)
+product35.photo.attach(io: file, filename: "zucaritas.png", content_type: "image/png")
+product35.save!
+
+puts "creando producto 36..."
+file = URI.open("https://b-japi.com/cdn/shop/products/Disenosintitulo_27_1024x1024.png?v=1671810774")
+product36 = Product.new(name: "Granola", price: "12.50", expiration_date: "2023/09/13", stock: 3, category: "granos y cereales", user: user1)
+product36.photo.attach(io: file, filename: "granola.png", content_type: "image/png")
+product36.save!
+
+puts "creando producto 37..."
+file = URI.open("https://www.laserenisima.com.ar/images/productos/Leche-LS-Bien-Animal-3-sachet-ok.png")
+product37 = Product.new(name: "Leche", price: "9.1", expiration_date: "2023/09/30", stock: 8, category: "frescos", user: user2)
+product37.photo.attach(io: file, filename: "leche.png", content_type: "image/png")
+product37.save!
+
+puts "creando producto 38..."
+file = URI.open("https://www.yogurser.com.ar/wp-content/uploads/2023/02/Ser-Batido-FREE-con-frambuesa-906x1024.png")
+product38 = Product.new(name: "Yogurt", price: "10", expiration_date: "2023/09/12", stock: 4, category: "frescos", user: user3)
+product38.photo.attach(io: file, filename: "yogurt.png", content_type: "image/png")
+product38.save!
+
+puts "creando producto 39..."
+file = URI.open("https://distribuidoracunia.com/wp-content/uploads/2021/03/queso-danbo-bonle.png")
+product39 = Product.new(name: "Queso dambo", price: "2.70", expiration_date: "2023/09/24", stock: 21, category: "frescos", user: user1)
+product39.photo.attach(io: file, filename: "quesodambo.png", content_type: "image/png")
+product39.save!
+
+puts "creando producto 40..."
+file = URI.open("https://sunrise-soya.com/wp-content/uploads/2022/02/SS77146_YatSing_700g_Rectangle_Tradition_3D.png")
+product40 = Product.new(name: "Tofu", price: "13.2", expiration_date: "2023/10/3", stock: 32, category: "vegetarianos y veganos", user: user2)
+product40.photo.attach(io: file, filename: "tofu.png", content_type: "image/png")
+product40.save!
+
+puts "creando producto 41..."
+file = URI.open("https://www.silkargentina.com.ar/wp-content/uploads/2023/06/Almendra-Original.png")
+product41 = Product.new(name: "Leche de almendra", price: "13.2", expiration_date: "2023/10/3", stock: 32, category: "vegetarianos y veganos", user: user2)
+product41.photo.attach(io: file, filename: "lechealmendra.png", content_type: "image/png")
+product41.save!
+
+puts "creando producto 42..."
+file = URI.open("https://ss-static-01.esmsv.com/id/144746/productos/obtenerimagen/?id=5300&useDensity=false&width=1280&height=720&tipoEscala=contain")
+product42 = Product.new(name: "Azucar maskabo", price: "25.2", expiration_date: "2023/10/3", stock: 42, category: "orgánicos", user: user2)
+product42.photo.attach(io: file, filename: "azucarmaskabo.png", content_type: "image/png")
+product42.save!
+
 transaction1 = Transaction.create!(product: product11, user: user3, price: product11.price)
 transaction2 = Transaction.create!(product: product9, user: user3, price: product9.price)
 transaction3 = Transaction.create!(product: product2, user: user3, price: product2.price)
