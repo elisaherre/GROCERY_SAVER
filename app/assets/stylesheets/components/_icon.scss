@@ -1,0 +1,12 @@
+.position-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.position-icon i {
+  color: grey;
+}
+
+.position-icon i:hover {
+  color: $red;
+}

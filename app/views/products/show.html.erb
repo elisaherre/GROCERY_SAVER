@@ -1,19 +1,38 @@
-<div class="container">
-<h1><%= @product.name %></h1>
-<% if @product.photo.key != nil %>
-<%= cl_image_tag(@product.photo.key,
-      width: 400, height: 300, crop: :fill) %>
-<% end %>
-<p>Category: <%=@product.category %></p>
-<p>Expiration date: <strong><%=@product.expiration_date %></strong></p>
-<p>Stock: <%=@product.stock %></p>
-<p>Price: <%=@product.price %></p>
-<% if @product.user == current_user %>
-<h4><%= link_to "Editar", edit_product_path(@product.id), class: "btn btn-primary" %></h4>
-<%= link_to "X", product_path(@product.id), data: {turbo_method: :delete, turbo_confirm: "¿Seguro que quieres borrar este producto?"} %>
-<% end %>
-<% if current_user != @product.user %>
-  <%= link_to "Comprar", products_path %>
-<% end %>
-<%= link_to "Volver", products_path %>
+<div class="container mt-5 mb-3">
+  <div class="d-flex justify-content-start mb-3">
+    <h1>DETALLES DEL PRODUCTO</h1>
+  </div>
+  <div class="d-flex flex-row mb-3 justify-content-center">
+    <div class="card mb-3" style="width: 50rem;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <% if @product.photo.key != nil %>
+          <%= cl_image_tag(@product.photo.key, crop: :fill,
+          class: "img-fluid rounded-start") %>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= @product.name %></h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Fecha de vencimiento: <strong><%=@product.expiration_date %></strong></li>
+              <li class="list-group-item">Categoría: <%=@product.category.capitalize %></li>
+              <li class="list-group-item">Precio: $<%=@product.price %></li>
+              <li class="list-group-item">Stock: <%=@product.stock %></li>
+              <li class="list-group-item">Vendedor: <%=@product.user.email %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <div class="card-body">
+      <% if @product.user == current_user %>
+      <%= link_to "Editar", edit_product_path(@product.id), class: "btn btn-primary" %>
+      <% end %>
+      <% if current_user != @product.user %>
+      <%= button_to "Comprar", transactions_path(product_id: @product.id), class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to "Volver", products_path, class: "btn btn-primary" %>
+    </div>
+    </div>
+  </div>
 </div>

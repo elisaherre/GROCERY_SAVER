@@ -1,27 +1,28 @@
-<div class="container">
-  <h1>Products</h1>
-  <div class="d-flex flex-wrap justify-content-center gap-3">
+<div class="container mt-5 mb-3">
+  <div class="d-flex justify-content-start mb-3">
+    <h1>TODOS LOS PRODUCTOS</h1>
+  </div>
+  <div class="d-flex flex-wrap justify-content-center g-3">
     <% @products.each do |product| %>
     <% if product.stock > 0 %>
-       <div class="card" style="width: 18rem;">
-      <% if product.photo.key != nil %>
-      <%= cl_image_tag(product.photo.key,
-          height: 300, crop: :fill) %>
-      <% end %>
+      <div class="card mb-3 p-1" style="width: 18rem; height: 30rem">
+        <% if product.photo.key != nil %>
+        <%= cl_image_tag(product.photo.key, height: 200, width: 200, crop: :pad, class: "mx-auto") %>
+        <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= product.name %></h5>
         <p class="card-text">Fecha de vencimiento: <br> <%= product.expiration_date %></p>
         <p class="card-text">Precio: $<%= product.price %></p>
         <p class="card-text">Stock: <%= product.stock %></p>
-        <div class="d-flex justify-content-between">
-        <h4><%= link_to "Ver producto", product_path(product.id), class: "btn btn-primary" %></h4>
-        <h4><%= button_to "Comprar", transactions_path(product_id: product.id), class: "btn btn-primary" %></h4>
+        <div class="d-flex justify-content-between ">
+          <h4><%= link_to "Ver producto", product_path(product.id), class: "btn btn-primary",
+            style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></h4>
+          <h4><%= button_to "Comprar", transactions_path(product_id: product.id), class: "btn btn-primary",
+            style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></h4>
         </div>
-
       </div>
     </div>
     <% end %>
-
     <% end %>
   </div>
 </div>

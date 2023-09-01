@@ -1,0 +1,32 @@
+<div class="container mt-5 mb-3">
+  <div class="d-flex justify-content-start mb-3">
+    <h1>DETALLES DEL PRODUCTO</h1>
+  </div>
+  <div class="d-flex flex-wrap justify-content-center g-3">
+    <div class="card" style="width: 25rem;">
+    <%= link_to '<i class="fa-solid fa-trash "></i>'.html_safe, product_path(@product.id),
+      class: "position-icon",
+      data: {turbo_method: :delete, turbo_confirm: "¿Seguro que quieres borrar este producto?"} %>
+    <% if @product.photo.key != nil %>
+    <%= cl_image_tag(@product.photo.key, crop: :fill) %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= @product.name %></h5>
+    </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Fecha de vencimiento: <strong><%=@product.expiration_date %></strong></li>
+        <li class="list-group-item">Categoría: <%=@product.category.capitalize %></li>
+        <li class="list-group-item">Precio: $<%=@product.price %></li>
+        <li class="list-group-item">Stock: <%=@product.stock %></li>
+        </ul>
+    <div class="card-body">
+      <% if @product.user == current_user %>
+      <%= link_to "Editar", edit_product_path(@product.id), class: "btn btn-primary" %>
+      <% end %>
+      <% if current_user != @product.user %>
+      <%= link_to "Comprar", products_path, class: "btn btn-primary" %>
+      <% end %>
+      <%= link_to "Volver", products_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
