@@ -109,7 +109,7 @@ product14.photo.attach(io: file, filename: "jamon.png", content_type: "image/png
 product14.save!
 
 puts "creando producto 15..."
-file = URI.open("https://almacencamposverdes.com.ar/wp-content/uploads/2018/04/1107.jpg")
+file = URI.open("https://therbal.mx/cdn/shop/products/Tenegro-Der_2048x2048.png?v=1615222737.jpg")
 product15 = Product.new(name: "Té negro", price: "10", expiration_date: "2023/09/3", stock: 8, category: "bebidas", user: user3)
 product15.photo.attach(io: file, filename: "ténegro.png", content_type: "image/png")
 product15.save!

@@ -1,23 +1,38 @@
-<div class="container w-50 d-flex mt-3 justify-content-center border align-items-center p-3">
-
-  <% if @transaction.product.photo.key != nil %>
-    <%= cl_image_tag(@transaction.product.photo.key,
-      height: 200, crop: :fill) %>
-  <% end %>
-  <div class="ms-3">
-    <h1><%= @transaction.product.name %></h1>
-    <p><%= @transaction.created_at %></p>
-    <% if @transaction.user != current_user %>
-    <p>Comprador: <%=@transaction.user.email %></p>
-    <% else %>
-    <p>Vendedor: <%=@transaction.product.user.email %></p>
-    <% end %>
-    <p>Precio: $<%=@transaction.product.price %></p>
-    <% if @transaction.user != current_user %>
-      <%= link_to "Volver", selling_list_path, class: "btn btn-primary" %>
-    <% else %>
-      <%= link_to "Volver", shopping_list_path, class: "btn btn-primary" %>
-    <% end %>
+<div class="container mt-5 mb-3">
+  <div class="d-flex justify-content-start mb-3">
+    <h1>DETALLES DE TRANSACCIÓN</h1>
   </div>
-
+  <div class="d-flex flex-row mb-3 justify-content-center">
+    <div class="card mb-3" style="width: 50rem;">
+      <div class="row g-0">
+        <div class="col-md-4 align-items-center d-flex bg-white">
+          <% if @transaction.product.photo.key != nil %>
+          <%= cl_image_tag(@transaction.product.photo.key, crop: :fill,
+          class: "img-fluid rounded-start") %>
+          <% end %>
+        </div>
+        <div class="col-md-8 ps-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= @transaction.product.name %></h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Fecha de compra: <strong><%=@transaction.created_at %></strong></li>
+              <% if @transaction.user != current_user %>
+              <li class="list-group-item">Comprador: <%=@transaction.user.email %></li>
+              <% else %>
+              <li class="list-group-item">Vendedor: <%=@transaction.product.user.email %></li>
+              <% end %>
+              <li class="list-group-item">Precio: $<%=@transaction.product.price %></li>
+            </ul>
+          </div>
+          <div class="d-flex justify-content-start ms-3 mb-3 ps-3">
+            <% if @transaction.user != current_user %>
+            <%= link_to "Volver", selling_list_path, class: "btn btn-primary" %>
+            <% else %>
+            <%= link_to "Volver", shopping_list_path, class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
