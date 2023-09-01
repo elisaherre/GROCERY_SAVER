@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: black;
-  position: sticky;
+  // position: sticky;
   z-index: 3;
   width: 100%;
 }
@@ -14,16 +14,28 @@
   width: 80px;
 }
 
-.change_white{
-  color: #fff;
-}
-
 .nav-link-login {
   background-color: #88A62B; /* Verde corporativo */
-  padding: 10px 25px;
+  padding: .5rem 1.2rem;
   border-radius: 15px;
   color: #fff !important;
   margin-right: 8px;
+}
+.nav-link-login:hover{
+  background-color: #cdd006;
+}
+
+#dropdown-title{
+  color: white;
+}
+#dropdown-title:hover{
+  color: $primary;
+}
+.color-link{
+  color: white;
+}
+.color-link:hover {
+  color: $primary;
 }
 
 .navbar-nav > li {
