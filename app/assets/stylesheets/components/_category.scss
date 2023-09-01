@@ -1,3 +1,21 @@
-.category-card{
-  background-color: rgba(255, 255, 255, 0.63);
+.category-card {
+  background-color: rgba(255, 255, 255, 0.72);
+  border: 3px solid white;
+  padding: 70px 0 70px 0;
+  border-radius: 12px;
+  transition: background-color 0.3s, transform 0.3s;
+  will-change: transform;
+  color: #88A62C;
+
+  // Efecto al hacer hover sobre la tarjeta
+  &:hover {
+      background-color: rgba(255, 255, 255, 0.881);
+      transform: translateY(-5px);
+  }
+}
+
+.box-principal{
+width: 70%;
+padding-top: 70px;
+margin: auto;
 }
