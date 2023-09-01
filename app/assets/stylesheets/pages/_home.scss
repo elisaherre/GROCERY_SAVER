@@ -38,7 +38,16 @@
 }
 
 .fondo-grocery{
-  background-image: asset-url("bg_-body3.jpg");
+  background-image: asset-url("bg_body1.jpg");
   background-size: cover;
   background-position: center top;
+}
+
+ i{
+  font-size: 40px;
+}
+
+.caja-categorias{
+  margin-top: 90px;
+  margin-bottom: 90px;
 }
