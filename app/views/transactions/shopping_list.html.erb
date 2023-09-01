@@ -1,18 +1,27 @@
-<div class="container">
-  <h1>Mis compras</h1>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <h1>MIS COMPRAS</h1>
+    </div>
+  </div>
+
 
     <% @compras.each do |compra| %>
-      <div class="card w-100">
-        <div class="card-header">
-          Fecha: <%= compra.created_at %>
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="card p-1 w-100 m-2">
+        <div class="card-header fondo-header">
+          Fecha: <%= compra.created_at.strftime("%d/%m/%Y") %>
         </div>
-        <div class="card-body d-flex justify-content-between">
-        <div class='d-flex'>
-          <h5 class="card-title me-3"><%= compra.product.name %></h5>
-          <p class="card-text">Precio: $<%= compra.product.price %></p>
+        <div class="card-body d-flex justify-content-between align-items-center">
+        <div class='d-flex align-items-center'>
+          <p class="card-text fw-semibold mb-0 me-5"><%= compra.product.name %></p>
+          <p class="card-text align-self-end ">Precio: $<%= compra.product.price %></p>
         </div>
           <%= link_to "Ver compra", transaction_path(compra.id), class: "btn btn-primary" %>
         </div>
+       </div>
       </div>
+    </div>
     <% end %>
   </div>
