@@ -3,23 +3,17 @@
   border: 3px solid white;
   padding: 70px 0 70px 0;
   border-radius: 12px;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; // Agrega box-shadow a la transición
   will-change: transform;
   color: #88A62C;
+
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);  // Sombra básica
 
   // Efecto al hacer hover sobre la tarjeta
   &:hover {
       background-color: rgba(255, 255, 255, 0.881);
+      border: 3px solid #88A62C;
       transform: translateY(-5px);
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);  // Sombra un poco más prominente al hacer hover
   }
-}
-
-.box-principal{
-width: 70%;
-padding-top: 150px;
-margin: auto;
-}
-
-i{
-  height: 10px;
 }
