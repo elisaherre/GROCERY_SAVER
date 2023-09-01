@@ -1,9 +1,22 @@
-<%= simple_form_for @product do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :stock %>
-  <%= f.input :expiration_date %>
-  <%= f.input :category, collection: Product::CATEGORIES %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit %>
-<% end %>
+
+  <%= simple_form_for @product do |f| %>
+<div class="row mt-3">
+  <div class="col-6">
+    <%= f.input :name %>
+    <%= f.input :stock %>
+  </div>
+  <div class="col-6">
+    <%= f.input :price %>
+    <%= f.input :category, collection: Product::CATEGORIES %>
+  </div>
+  </div>
+  <div class="row">
+    <%= f.input :expiration_date %>
+    <%= f.input :photo, as: :file %>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col">
+    <%= f.button :submit %>
+    </div>
+  </div>
+    <% end %>

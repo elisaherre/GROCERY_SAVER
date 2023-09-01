@@ -22,7 +22,7 @@
           <div class="d-flex justify-content-between ">
             <h4><%= link_to "Ver producto", product_path(product.id), class: "btn btn-primary",
               style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></h4>
-            <h4><%= button_to "Editar", edit_product_path(product.id), class: "btn btn-primary",
+            <h4><%= link_to "Editar", edit_product_path(product.id), class: "btn btn-primary",
               style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></h4>
           </div>
         </div>
