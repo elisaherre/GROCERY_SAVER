@@ -22,3 +22,17 @@ footer a:hover {
   text-decoration: underline;
 }
 
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  color: #88A62B;
+  opacity: 1;
+}
